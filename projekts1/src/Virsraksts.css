@@ -1,0 +1,16 @@
+.heading{
+    padding:20px;
+    border: 2px solid red;
+    background-color: aliceblue;
+    font-family: sans-serif;
+    h1{
+        text-align: center;
+    }
+    button{
+        padding: 5px;
+        &:hover{
+            transform: scale(1.2);
+            transition: .5s;
+        }
+    }
+}
