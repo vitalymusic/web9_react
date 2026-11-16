@@ -17,8 +17,8 @@ function Card({name,text,image,link,active,onClick }) {
     }
 
    
-    const ieliktGroza = ()=>{
-
+    const ieliktGroza = (e)=>{
+       e.stopPropagation()
         alert(link)
     }
 
