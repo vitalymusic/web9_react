@@ -6,11 +6,12 @@ function Card({name,text,image,link,active}) {
     let [showImage, setShowImage] = useState(true);
     let [buttonText, setButtonText] = useState("Paslēpt attēlu");
 
+    let [cardText, setCardText] = useState(text)
+
     let handleImage = ()=>{
         setShowImage(!showImage)
 
-        showImage==true?setButtonText("Paslēpt attēlu"):setButtonText("Parādīt attēlu")
-        console.log(showImage)
+        showImage?setButtonText("Parādīt attēlu"):setButtonText("Paslēpt attēlu")
     }
 
    
@@ -20,13 +21,20 @@ function Card({name,text,image,link,active}) {
     }
 
 
+    const handleTextInput = (e)=>{
+        setCardText(e.target.value)
+    }
+
     return ( 
     <>
        <div className={`border-2 p-3 rounded-md ${active==true?'bg-blue-200':''}`}>
             <h3>{name}</h3>
-            <img src={image} alt="attels" />
-            <button onClick={handleImage}>{buttonText}</button>
-            <p>{text}</p>
+                {
+                showImage==true&&(<img src={image} alt="attels" />)
+                }
+            <button onClick={handleImage}>{buttonText}</button><br />
+            <input type="text" id="" placeholder='Ievadi tekstu' onInput={handleTextInput}/>
+            <p>{cardText}</p>
             <button href={link} onClick={ieliktGroza} >Ielikt grozā</button>
        </div> 
     
