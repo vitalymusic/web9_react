@@ -8,8 +8,8 @@ export default function App() {
 
   return (
     <>
-      <Virsraksts></Virsraksts>
-      <Navigacija></Navigacija>
+      <Virsraksts />
+      <Navigacija />
     </>
   )
 }
