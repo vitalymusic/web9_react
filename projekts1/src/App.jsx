@@ -1,5 +1,6 @@
 
 import './App.css'
+import Grid from './Grid'
 import Navigacija from './Nav'
 import Virsraksts from './Virsraksts'
 
@@ -10,6 +11,7 @@ export default function App() {
     <>
       <Virsraksts />
       <Navigacija />
+      <Grid />
     </>
   )
 }
