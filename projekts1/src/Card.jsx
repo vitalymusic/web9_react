@@ -1,7 +1,12 @@
 import { useState } from 'react';
 
 
-function Card({name,text,image,link,active}) {
+function Card({name,text,image,link,active,onClick }) {
+
+    const [activeCard, setActiveCard] = useState(null);
+    const handleClick = (id) => {
+        setActiveCard(id);
+    };
 
     let [showImage, setShowImage] = useState(true);
     let [buttonText, setButtonText] = useState("Paslēpt attēlu");
@@ -27,7 +32,7 @@ function Card({name,text,image,link,active}) {
 
     return ( 
     <>
-       <div className={`border-2 p-3 rounded-md ${active==true?'bg-blue-200':''}`}>
+       <div className={`border-2 p-3 rounded-md ${active==true?'bg-blue-200':''}`} onClick={handleClick}>
             <h3>{name}</h3>
                 {
                 showImage==true&&(<img src={image} alt="attels" />)
