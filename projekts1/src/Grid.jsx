@@ -2,14 +2,13 @@ import { useState } from 'react';
 import Card from './Card';
 
 
+function Grid() {
 
 let [active, setActive] = useState(false)
 
 let handleClick = ()=>{
     setActive(true)
 }
-
-function Grid() {
 
     return ( 
     <div className='p-4 grid grid-cols-3 gap-4'>
